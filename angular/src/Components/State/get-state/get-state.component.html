@@ -1,0 +1,22 @@
+<select name="country" [(ngModel)]="selectedCountry">
+    <option value="">Select a country</option>
+    <option *ngFor="let country of countries" [value]="country.id">
+      {{country.name}}
+    </option>
+  </select>
+  
+  <button (click)="getStates()">Get States</button>
+  
+  <div *ngIf="loadingStates">
+    Loading states...
+  </div>
+  
+  <div *ngIf="!loadingStates && states.length === 0">
+    No states found.
+  </div>
+  
+  <div *ngIf="!loadingStates && states.length > 0">
+    <div *ngFor="let state of states">
+      {{state.name}}
+    </div>
+  </div>

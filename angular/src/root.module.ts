@@ -18,6 +18,11 @@ import { API_BASE_URL } from '@shared/service-proxies/service-proxies';
 
 import { RootComponent } from './root.component';
 import { AppInitializer } from './app-initializer';
+import { AddStateComponent } from './Components/State/add-state/add-state.component';
+import { GetStateComponent } from './Components/State/get-state/get-state.component';
+import { AddCountryComponent } from './Components/Country/add-country/add-country.component';
+import { EditStateComponent } from './Components/State/edit-state/edit-state.component';
+import { EditCountryComponent } from './Components/Country/edit-country/edit-country.component';
 
 export function getCurrentLanguage(): string {
   if (abp.localization.currentLanguage.name) {
@@ -41,7 +46,7 @@ export function getCurrentLanguage(): string {
     ServiceProxyModule,
     RootRoutingModule,
   ],
-  declarations: [RootComponent],
+  declarations: [RootComponent, AddStateComponent, GetStateComponent, AddCountryComponent, EditStateComponent, EditCountryComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true },
     {

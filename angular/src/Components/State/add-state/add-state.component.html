@@ -1,0 +1,27 @@
+<form class="border p-3 rounded-3 shadow shadow-lg p-5" [formGroup]="addStateForm" (ngSubmit)="AddStateSubmitted()">
+    <div class="row g-0">
+      <diV class="col text-center fw-bold p-2 mb-3">
+        <span class="fs-3">Add State</span>
+      </diV>
+    </div>
+  
+    <div class="row">
+      <div class="col mb-3 fw-bold">
+        <label for="name" class="form-label">State Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+        <div class="form-text text-danger text-center" *ngIf="Name.errors?.['required'] && (Name.touched||Name.dirty)">
+          State Name is required.
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-6 offset-3">
+        <div class="d-grid text-center">
+          <button type="submit" class="btn btn-outline-primary mt-3" [disabled]="addStateForm.invalid"> Add State </button>
+        </div>
+      </div>
+  
+    </div>
+  
+  </form>
